@@ -1,7 +1,7 @@
 ---
 templateKey: 'product-page'
 path: /products
-title: Our Coffee
+title: Web development with simple yet modern approach
 image: /img/jumbotron.jpg
 heading: What we offer
 description: >-
