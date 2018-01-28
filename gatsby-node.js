@@ -16,17 +16,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               path
               date
               title
-              image
-              heading
               description
-              intro {
-                blurbs {
-                  image
-                  text
-                }
-                heading
-                description
-              }
+              
               main {
                 heading
                 description
@@ -43,38 +34,24 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
                   image
                 }
               }
-              testimonials {
-                author
-                quote
-              }
-              full_image
-              pricing {
-                heading
-                description
-                plans {
-                  description
-                  items
-                  plan
-                  price
-                }
-              }
+              
             }
           }
         }
       }
     }
   `).then((result) => {
-    if (result.errors) {
-      result.errors.forEach(e => console.error(e.toString()));
-      return Promise.reject(result.errors);
-    }
+      if (result.errors) {
+        result.errors.forEach(e => console.error(e.toString()));
+        return Promise.reject(result.errors);
+      }
 
-    return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.frontmatter.path,
-        component: path.resolve(`src/templates/${String(node.frontmatter.templateKey)}.js`),
-        context: {}, // additional data can be passed via context
+      return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        createPage({
+          path: node.frontmatter.path,
+          component: path.resolve(`src/templates/${String(node.frontmatter.templateKey)}.js`),
+          context: {}, // additional data can be passed via context
+        });
       });
     });
-  });
 };

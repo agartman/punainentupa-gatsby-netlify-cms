@@ -1,7 +1,7 @@
 ---
 templateKey: 'about-page'
 path: /about
-title: Approach
+title: about
 ---
 ### Listen to the customer and give feedback
 As a consultant, I believe I'm expected to give my best recommendation to the in-house team and product owner. Before even going to technical implementation, it makes sense to evaluate the higher level concept as well. What do we want to achieve? Would THIS be something the users would find and actually use? Is THIS a future-proof approach or something that would be past time when launched? Through listening and simply experience, I always find something to give constructive feedback about and possibly give direction on the overall design. This is something I always try to apply in my work: listening.
