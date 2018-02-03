@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-path: Tools
+path: /Tools
 title: Here's what I like to use
 date: 2018-02-03T18:45:11.395Z
 description: I like these
