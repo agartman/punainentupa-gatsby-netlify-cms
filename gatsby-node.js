@@ -18,23 +18,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               title
               description
               
-              main {
-                heading
-                description
-                image1 {
-                  alt
-                  image
-                }
-                image2 {
-                  alt
-                  image
-                }
-                image3 {
-                  alt
-                  image
-                }
-              }
-              
             }
           }
         }
