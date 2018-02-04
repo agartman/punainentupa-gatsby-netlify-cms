@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-//import 'purecss'
+import 'purecss'
 import '../css/layouts/marketing.css'
 const TemplateWrapper = ({ children }) => (
 
@@ -38,7 +38,7 @@ const TemplateWrapper = ({ children }) => (
 
     <form className="pure-form  pure-g" name="newsletter" data-netlify="true">
     <div className="pure-u-3-5">
-        <input className="pure-input-1" type="text" placeholder="E-mail"/>
+        <input className="pure-input-1" type="text" name="email" placeholder="E-mail"/>
     </div>
     <div className="pure-u-1-4">
       <button type="submit" className="pure-button pure-input-1">Subscribe</button>
@@ -114,14 +114,14 @@ const TemplateWrapper = ({ children }) => (
                     <fieldset>
 
                         <label for="name">Your Name</label>
-                        <input id="name" type="text" placeholder="Your Name"/>
+                        <input id="name" type="text" name="name" placeholder="Your Name"/>
 
 
                         <label for="email">Your Email</label>
-                        <input id="email" type="email" placeholder="Your Email"/>
+                        <input id="email" type="email" name="email" placeholder="Your Email"/>
 
                         <label for="message">Your message</label>
-                        <textarea id="message"  className="pure-input-1" type="text" placeholder="Your message"/>
+                        <textarea id="message"  className="pure-input-1" name="message" type="text" placeholder="Your message"/>
 
                         <button type="submit" className="pure-button">Send</button>
                     </fieldset>
