@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "gatsby-cli": "^1.1.34",
+    "parse-passwd": "^1.0.0",
     "prettier": "^1.7.4"
   }
 }
