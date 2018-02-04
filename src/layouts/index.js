@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-//import 'purecss'
+import 'purecss'
 import '../css/layouts/marketing.css'
 const TemplateWrapper = ({ children }) => (
 
