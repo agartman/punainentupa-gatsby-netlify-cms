@@ -36,7 +36,7 @@ const TemplateWrapper = ({ children }) => (
     <h2 className="content-head content-head-ribbon is-center">Stay tuned via an occasional newsletter
 </h2>
 
-    <form className="pure-form  pure-g" netlify>
+    <form className="pure-form  pure-g" data-netlify="true">
     <div className="pure-u-3-5">
         <input className="pure-input-1" type="text" placeholder="E-mail"/>
     </div>
@@ -110,7 +110,7 @@ const TemplateWrapper = ({ children }) => (
 
         <div className="pure-g">
             <div className="l-box-lrg pure-u-1 pure-u-md-2-5">
-                <form className="pure-form pure-form-stacked" netlify>
+                <form className="pure-form pure-form-stacked" data-netlify="true">
                     <fieldset>
 
                         <label for="name">Your Name</label>
