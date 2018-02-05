@@ -5,9 +5,9 @@ export default ({ content, className }) => <div className="content">
 
   <div className="pure-g">
     <div className="l-box-lrg pure-u-1 pure-u-md-2-5">
-      <form name="contact" action="thank-you" className="pure-form pure-form-stacked" data-netlify="true">
+      <form name="contact" className="pure-form pure-form-stacked" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
         <fieldset>
-
+          <input type="hidden" name="form-name" value="contact" />
           <label for="name">Your Name</label>
           <input id="name" type="text" name="name" placeholder="Your Name" />
 
