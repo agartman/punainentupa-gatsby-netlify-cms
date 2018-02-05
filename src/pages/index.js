@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Script from 'react-load-script';
 import graphql from 'graphql';
+import LandingPage from '../components/LandingPage'
 
 export default class IndexPage extends React.Component {
   handleScriptLoad() {
@@ -25,8 +26,7 @@ export default class IndexPage extends React.Component {
           url="https://identity.netlify.com/v1/netlify-identity-widget.js"
           onLoad={() => this.handleScriptLoad()}
         />
-        <div className="container">
-        </div>
+      <LandingPage />
       </section>
     );
   }
