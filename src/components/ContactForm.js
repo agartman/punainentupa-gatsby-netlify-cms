@@ -5,7 +5,7 @@ export default ({ content, className }) => <div className="content">
 
   <div className="pure-g">
     <div className="l-box-lrg pure-u-1 pure-u-md-2-5">
-      <form name="contact" className="pure-form pure-form-stacked" data-netlify="true">
+      <form name="contact" action="thank-you" className="pure-form pure-form-stacked" data-netlify="true">
         <fieldset>
 
           <label for="name">Your Name</label>
