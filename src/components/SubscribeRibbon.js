@@ -4,6 +4,7 @@ export default ({ content, className }) => <div className="content ribbon">
   <h2 className="content-head content-head-ribbon is-center">Stay tuned via an occasional newsletter
 </h2>
   <form name="newsletter" className="pure-form pure-form-stacked" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="newsletter" />
     <div className="pure-u-3-5">
       <input className="pure-input-1" type="text" id="email" name="email" placeholder="E-mail" />
     </div>
