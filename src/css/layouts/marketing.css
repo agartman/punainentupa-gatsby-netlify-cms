@@ -138,7 +138,10 @@ a.pure-button-primary {
 
 .home-menu a {
     color: rgb(247, 27, 27);
+    border: none;
+    text-decoration: none;    
 }
+
 .home-menu li a:hover,
 .home-menu li a:focus {
     background: none;
@@ -146,6 +149,22 @@ a.pure-button-primary {
     color: rgb(229, 174, 174);
 }
 
+.post-title a {
+    color: rgb(107, 2, 2);
+    border: none;
+    text-decoration: none;    
+}
+
+.blog-post-container {
+    margin-left: 20px;
+    margin-bottom: 32px;
+
+}
+
+.chapter {
+    
+    max-width: 700px;
+}
 
 /*
  * -- SPLASH STYLES --
@@ -268,6 +287,18 @@ a.pure-button-primary {
     width: 100%;
 }
 
+.borderless {
+    border: none;
+}
+
+.blog-ribbon-container{
+    margin-top: 32px;
+}
+
+.contact-form{
+    background-color: rgb(236, 236, 236)
+}
+
 /*
  * -- TABLET (AND UP) MEDIA QUERIES --
  * On tablets and other medium-sized devices, we want to customize some
@@ -318,6 +349,12 @@ a.pure-button-primary {
     .pure-form div {
         padding:10px;
     }
+
+
+    .blog-post-container{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }
 
 /*
@@ -349,5 +386,8 @@ a.pure-button-primary {
         -o-background-size: cover;
         background-size: cover;
     }
-    
+    .blog-post-container{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 }

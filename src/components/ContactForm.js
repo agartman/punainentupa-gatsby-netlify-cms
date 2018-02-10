@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ content, className }) => <div className="content">
+export default ({ content, className }) => <div className="content  contact-form">
   <h2 className="content-head is-center">Let's talk!</h2>
   <h4 className="content-head is-center">Call me on +358 50 371 3477</h4>
 

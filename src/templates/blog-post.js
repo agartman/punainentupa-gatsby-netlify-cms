@@ -2,6 +2,7 @@ import React from 'react';
 import graphql from 'graphql';
 import Helmet from 'react-helmet';
 import Content, { HTMLContent } from '../components/Content';
+import Link from 'gatsby-link';
 
 export const BlogPostTemplate = ({
   content, contentComponent, description, title, helmet,
@@ -10,14 +11,20 @@ export const BlogPostTemplate = ({
 
   return (
     <section className="section">
-      { helmet || ''}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">{title}</h1>
-            <p>{description}</p>
-            <PostContent content={content} />
+      {helmet || ''}
+      <div className="container">
+        <div className="ribbon l-box-lrg pure-g">
+          <div className="pure-u-1 blog-ribbon-container">
+            <h1 className="splash-head borderless is-center">{title}</h1>
           </div>
+        </div>
+        <div className="blog-post-container chapter">
+          <p>{description}</p>
+          <PostContent content={content} />
+
+          <Link className="pure-button" to="/blog">
+            Back to blog list
+                </Link>
         </div>
       </div>
     </section>
