@@ -114,7 +114,7 @@ a.pure-button-primary {
 }
 
 .home-menu .pure-menu-selected a {
-    color: white;
+    color: rgb(107, 2, 2);
 }
 
 .home-menu a {
@@ -231,11 +231,9 @@ a.pure-button-primary {
 .company-info {
     background: #b80000;
 }
-.company-info h1, h2, h3, h4, h5, h6, label {
-    
+.company-info h2{
     color: #ffffff
-}
-
+}    
 /* This is the class used for the footer */
 .footer {
     background: #111;
