@@ -4,6 +4,7 @@ import SubscribeRibbon from './SubscribeRibbon'
 import Tools from './Tools'
 import RecentBlogPosts from './RecentBlogPosts'
 import ContactForm from './ContactForm'
+import Footer from './Footer'
 
 export default ({ content, className }) => <div className="container">
     <Splash heading1="Hi! I'm Atte"  heading2="Let's get to work!" subheader="Full stack developer in Southern Finland area" />
@@ -12,5 +13,7 @@ export default ({ content, className }) => <div className="container">
         <Tools />
         <RecentBlogPosts />
         <ContactForm />
+        <Footer />
+
     </div>
 </div>

@@ -10,7 +10,7 @@
  */
 body {
     line-height: 1.7em;
-    color: #7f8c8d;
+    color: #8d827f;
     font-size: 13px;
 }
 
@@ -46,7 +46,9 @@ label {
     text-align: center;
 }
 
-
+.align-center {
+    margin: 0 auto;
+}
 
 /*
  * -- PURE FORM STYLES --
@@ -71,7 +73,7 @@ label {
  * I want my pure-button elements to look a little different
  */
 .pure-button {
-    background-color: #1f8dd6;
+    background-color: #d61f1f;
     color: white;
     padding: 0.5em 2em;
     border-radius: 5px;
@@ -79,7 +81,7 @@ label {
 
 a.pure-button-primary {
     background: white;
-    color: #1f8dd6;
+    color: #d61f1f;
     border-radius: 5px;
     font-size: 120%;
 }
@@ -96,7 +98,7 @@ a.pure-button-primary {
     box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
 }
 .home-menu {
-    background: #2d3e50;
+    background: #ffffff;
 }
 .pure-menu.pure-menu-fixed {
     /* Fixed menus normally have a border at the bottom. */
@@ -106,7 +108,7 @@ a.pure-button-primary {
 }
 
 .home-menu .pure-menu-heading {
-    color: white;
+    color: rgb(240, 12, 12);
     font-weight: 400;
     font-size: 120%;
 }
@@ -116,13 +118,13 @@ a.pure-button-primary {
 }
 
 .home-menu a {
-    color: #6FBEF3;
+    color: rgb(247, 27, 27);
 }
 .home-menu li a:hover,
 .home-menu li a:focus {
     background: none;
     border: none;
-    color: #AECFE5;
+    color: rgb(229, 174, 174);
 }
 
 
@@ -132,7 +134,13 @@ a.pure-button-primary {
  */
 
 .splash-container {
-    background: #1f8dd6;
+    background: #d61f1f;
+    background-image: url("../../img/jurica-koletic-317423.jpg");
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
     z-index: 1;
     overflow: hidden;
     /* The following styles are required for the "scroll-over" effect */
@@ -208,7 +216,7 @@ a.pure-button-primary {
 
 /* This is the class used for the content sub-headers (<h3>) */
 .content-subhead {
-    color: #1f8dd6;
+    color: #d61f1f;
 }
     .content-subhead i {
         margin-right: 7px;
@@ -216,8 +224,16 @@ a.pure-button-primary {
 
 /* This is the class used for the dark-background areas. */
 .ribbon {
-    background: #2d3e50;
+    background: #502d2d;
     color: #aaa;
+}
+
+.company-info {
+    background: #b80000;
+}
+.company-info h1, h2, h3, h4, h5, h6, label {
+    
+    color: #ffffff
 }
 
 /* This is the class used for the footer */
@@ -271,6 +287,13 @@ a.pure-button-primary {
         border: none;
     }
 
+    .pure-form{
+        max-width: 50%;
+    }
+
+    .pure-form div {
+        padding:10px;
+    }
 }
 
 /*
@@ -283,4 +306,24 @@ a.pure-button-primary {
     .splash-head {
         font-size: 300%;
     }
+
+
+    .pure-form{
+        max-width: 50%;
+        
+    }
+            .pure-form div {
+                padding:10px;
+            }
+}
+
+@media (max-width: 48em) {
+    .splash-container{ 
+        background-position: right;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    
 }
