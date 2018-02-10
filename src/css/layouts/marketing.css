@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans|Oleo+Script');
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -12,6 +14,7 @@ body {
     line-height: 1.7em;
     color: #8d827f;
     font-size: 13px;
+    
 }
 
 h1,
@@ -22,6 +25,12 @@ h5,
 h6,
 label {
     color: #34495e;
+    font-family: 'Lato', sans-serif;
+
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
 }
 
 .pure-img-responsive {
@@ -66,8 +75,14 @@ label {
     font-size: 100%;
     width: 100%;
     margin-bottom: 1em;
+    font-family: 'Lato', sans-serif;
+
 }
 
+textarea {
+    font-family: 'Lato', sans-serif;
+
+}
 /*
  * -- PURE BUTTON STYLES --
  * I want my pure-button elements to look a little different
@@ -77,6 +92,8 @@ label {
     color: white;
     padding: 0.5em 2em;
     border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+
 }
 
 a.pure-button-primary {
@@ -96,6 +113,8 @@ a.pure-button-primary {
     padding: 0.5em;
     text-align: center;
     box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+    font-family: 'Lato', sans-serif;
+
 }
 .home-menu {
     background: #ffffff;
@@ -159,19 +178,20 @@ a.pure-button-primary {
     position: absolute;
     top: 100px; left: 0; bottom: 0; right: 0;
     text-align: center;
-    text-transform: uppercase;
-}
+    }
 
 /* This is the main heading that appears on the blue section */
 .splash-head {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
+    font-family: 'Oleo Script', cursive;
     color: white;
     border: 3px solid white;
     padding: 1em 1.6em;
     font-weight: 100;
     border-radius: 5px;
     line-height: 1em;
+
 }
 
 /* This is the subheading that appears on the blue section */
@@ -179,6 +199,10 @@ a.pure-button-primary {
     color: white;
     letter-spacing: 0.05em;
     opacity: 0.8;
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+
+
 }
 
 /*
@@ -207,6 +231,8 @@ a.pure-button-primary {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin: 2em 0 1em;
+    font-family: 'Lato', sans-serif;
+
 }
 
 /* This is a modifier class used when the content-head is inside a ribbon */
