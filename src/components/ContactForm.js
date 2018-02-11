@@ -37,7 +37,7 @@ export default class ContactForm extends React.Component {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: this.encode({
-        "form-name": "newsletter",
+        "form-name": "contact",
         "email": this.state.contactEmail,
         "name": this.state.contactName,
         "message": this.state.contactMessage
