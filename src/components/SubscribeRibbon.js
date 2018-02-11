@@ -1,6 +1,11 @@
 import React from 'react';
-import axios from 'axios'
 export default class SubscribeRibbon extends React.Component {
+  encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
+
   constructor(params) {
     super()
     this.state = {
@@ -13,22 +18,23 @@ export default class SubscribeRibbon extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    axios.post("/thanks",
-      {
-        "form-name": "newsletter",
-        email: this.state.email,
-        "bot-field": null
-      }
-    ).then((data) => {
-      console.log(data)
-      this.state.loaded = true
-      this.state.buttonText = "Thanks! I got ya!"
-    }).catch(err => {
-      console.log(err)
+  handleSubmit = e => {
+    this.state.loading = true;
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "newsletter", 
+      "email": this.state.email 
     })
-  }
+    })
+      .then(() => {
+        this.state.loaded = true;
+        this.state.loading = false;
+      })
+      .catch(error => console.log(error));
+
+    e.preventDefault();
+  };
 
   handleChange(event) {
     this.setState({ email: event.target.value });
@@ -40,7 +46,7 @@ export default class SubscribeRibbon extends React.Component {
     return (
       <div className="content ribbon">
         <h2 className="content-head content-head-ribbon is-center">Stay tuned!</h2>
-        <form name="newsletter" onSubmit={this.handleSubmit} action="/thanks" className="pure-form align-center" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+        <form name="newsletter" onSubmit={this.handleSubmit} className="pure-form align-center" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
           <p className="hidden">
             <label>Don’t fill this out: <input name="bot-field" /></label>
           </p>
