@@ -2,7 +2,7 @@ import React from 'react';
 
 export default ({ content, className }) => <div className="content ribbon">
   <h2 className="content-head content-head-ribbon is-center">Stay tuned!</h2>
-  <form name="newsletter" className="pure-form align-center" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+  <form name="newsletter" action="/thanks" className="pure-form align-center" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="newsletter" />
     <div className="pure-g">
       

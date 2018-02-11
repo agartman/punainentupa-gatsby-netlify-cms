@@ -6,7 +6,7 @@ export default ({ content, className }) => <div className="content contact-form"
 
   <h4 className="content-head is-center">Or send a message</h4>
 
-  <form name="contact" className="pure-form pure-form-stacked float-center" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+  <form name="contact" action="/thanks-for-contact" className="pure-form pure-form-stacked float-center" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
     <div className="pure-g">
       <div className="pure-u-1 pure-u-md-1-2">
         <input type="hidden" name="form-name" value="contact" />

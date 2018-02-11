@@ -1,23 +1,25 @@
 import React from 'react';
 import graphql from 'graphql';
 import Content, { HTMLContent } from '../components/Content';
+import Link from 'gatsby-link';
 
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
 
   return (
-    <section className="section section--gradient">
       <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">{title}</h2>
-              <PageContent className="content" content={content} />
-            </div>
+        <div className="ribbon l-box-lrg pure-g">
+          <div className="pure-u-1 blog-ribbon-container">
+            <h1 className="splash-head borderless is-center">{title}</h1>
           </div>
         </div>
+        <div className="blog-post-container">
+          <PageContent content={content} />
+          <Link className="pure-button" to="/">
+            Back to front page
+                </Link>
+        </div>
       </div>
-    </section>
   );
 };
 
