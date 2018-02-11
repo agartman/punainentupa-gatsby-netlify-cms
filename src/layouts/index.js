@@ -13,7 +13,6 @@ const TemplateWrapper = ({ children }) => (
     <Helmet title="Punainen tupa | web development and design">
     <link href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css" rel="stylesheet" />
     </Helmet>
-    <Header />
     <div>{children()}</div>
     <ContactForm />
     <Footer />

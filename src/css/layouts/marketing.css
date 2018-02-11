@@ -173,7 +173,7 @@ a.pure-button-primary {
 
 .splash-container {
     background: #d61f1f;
-    background-image: url("../../img/jurica-koletic-317423.jpg");
+    background-image: url("../../img/IMG_3605.jpg");
     -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -299,6 +299,15 @@ a.pure-button-primary {
     background-color: rgb(236, 236, 236)
 }
 
+.contact-form .pure-button {
+    float: right;
+    max-width: 200px
+}
+
+.float-center {
+    display: block;
+    margin: auto;
+}
 /*
  * -- TABLET (AND UP) MEDIA QUERIES --
  * On tablets and other medium-sized devices, we want to customize some
@@ -389,5 +398,17 @@ a.pure-button-primary {
     .blog-post-container{
         margin-left: 5%;
         margin-right: 5%;
+    }
+
+    .contact-form .pure-button {
+        margin: .7em 0 0;
+        float: unset;
+        max-width: unset;
+
+        
+    }
+
+    .pure-button {
+        padding: 0.9em 2em
     }
 }
