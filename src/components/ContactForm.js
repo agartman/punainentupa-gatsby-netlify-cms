@@ -1,31 +1,95 @@
 import React from 'react';
+export default class ContactForm extends React.Component {
+  encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  }
 
-export default ({ content, className }) => <div className="content contact-form">
-  <h2 className="content-head is-center">Let's talk!</h2>
-  <h4 className="content-head is-center">Call me on +358 50 371 3477</h4>
+  constructor(params) {
+    super(params)
+    this.state = {
+      title: "Let's talk!",
+      loading: false,
+      loaded: false,
+      email: '',
+      buttonText: 'Send'
 
-  <h4 className="content-head is-center">Or send a message</h4>
+    }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-  <form name="contact" action="/thanks-for-contact" className="pure-form pure-form-stacked float-center" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
-    <div className="pure-g">
-      <p className="hidden">
-        <label>Don’t fill this out: <input name="bot-field" /></label>
-      </p>
-      <div className="pure-u-1 pure-u-md-1-2">
-        <input type="hidden" name="form-name" value="contact" />
-        <label htmlFor="name">Your Name</label>
-        <input id="name" type="text" name="name" placeholder="Your Name" />
-      </div><div className="pure-u-1 pure-u-md-1-2">
+  handleSubmit = e => {
+    this.setState({
+      loading: true,
+      buttonText: "Subscribing..."
+    })
+    e.preventDefault();
 
-        <label htmlFor="email">Your Email</label>
-        <input id="email" type="email" name="email" placeholder="Your Email" />
-      </div><div className="pure-u-1 pure-u-md-2-2 pure-u-lg-4-4">
-        <label htmlFor="message">Your message</label>
-        <textarea id="message" className="pure-input-1" name="message" type="text" placeholder="Your message" />
-      </div><div className="pure-u-1">
-        <button type="submit" className="pure-button pure-input-1">Send</button>
-      </div>
-    </div>
-  </form>
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: this.encode({
+        "form-name": "newsletter",
+        "email": this.state.email
+      })
+    })
+      .then(() => {
+        this.setState({
+          loading: false,
+          loaded: true,
+          title: "Thanks! I got ya! VIP list updated.",
+          buttonText: "Done"
+        })
+      })
+      .catch(error => {
+        console.log(error)
+        this.setState({
+          loading: false,
+          loaded: true,
+          buttonText: "Error occured, oops."
+        })
+      }
+      );
 
-</div>
+  };
+
+  handleChange(event) {
+    this.state.loaded = false;
+    this.setState({ email: event.target.value });
+  }
+
+  render() {
+    return (<div className="content contact-form">
+      <h2 className="content-head is-center">Let's talk!</h2>
+      <h4 className="content-head is-center">Call me on +358 50 371 3477</h4>
+
+      <h4 className="content-head is-center">Or send a message</h4>
+
+      <form onSubmit={this.handleSubmit} className="pure-form pure-form-stacked float-center">
+        <div className="pure-g">
+          <div className="pure-u-1 pure-u-md-1-2">
+            <label htmlFor="name">Your Name</label>
+            <input required="required" id="name" type="text" name="name" placeholder="Your Name" />
+          </div><div className="pure-u-1 pure-u-md-1-2">
+
+            <label htmlFor="email">Your Email</label>
+            <input required="required" id="email" type="email" name="email" placeholder="Your Email" />
+          </div><div className="pure-u-1 pure-u-md-2-2 pure-u-lg-4-4">
+            <label htmlFor="message">Your message</label>
+            <textarea id="message" className="pure-input-1" name="message" type="text" placeholder="Your message" />
+          </div><div className="pure-u-1">
+
+            <button disabled={this.state.loaded || this.state.loading} type="submit" title={this.state.buttonText} className="pure-button pure-input-1">{this.state.buttonText}</button>
+
+          </div>
+          {this.state.loaded ?
+            <h2 className="content-head is-center">Thanks. I'll get back to you soon.</h2>
+            : null}
+        </div>
+      </form>
+
+    </div>)
+  }
+}

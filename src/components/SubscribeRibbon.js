@@ -59,7 +59,6 @@ export default class SubscribeRibbon extends React.Component {
     this.setState({ email: event.target.value });
   }
 
-
   render() {
     return (
       <div className="content ribbon">
@@ -68,7 +67,7 @@ export default class SubscribeRibbon extends React.Component {
           <div className="pure-g">
             {!this.state.loaded ? 
             <div className="pure-u-1 pure-u-lg-3-5">
-              <input className="pure-input-1" type="text" id="email" value={this.state.email} onChange={this.handleChange} name="email" placeholder="E-mail for newsletter" />
+              <input required="required" className="pure-input-1" type="email" id="email" value={this.state.email} onChange={this.handleChange} name="email" placeholder="E-mail for newsletter" />
             </div> : null}
 
             <div className="pure-u-1 pure-u-lg-2-5">
