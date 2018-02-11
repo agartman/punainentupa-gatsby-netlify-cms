@@ -16,14 +16,20 @@ export default class ContactForm extends React.Component {
       buttonText: 'Send'
 
     }
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeName = this.handleChangeName.bind(this);
+    this.handleChangeEmail = this.handleChangeEmail.bind(this);
+    this.handleChangeMessage = this.handleChangeMessage.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit = e => {
     this.setState({
       loading: true,
-      buttonText: "Sending..."
+      buttonText: "Sending...",
+      contactEmail: '',
+      contactMessage: '',
+      contactName: '',
+
     })
     e.preventDefault();
 
@@ -32,7 +38,9 @@ export default class ContactForm extends React.Component {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: this.encode({
         "form-name": "newsletter",
-        "email": this.state.email
+        "email": this.state.contactEmail,
+        "name": this.state.contactName,
+        "message": this.state.contactMessage
       })
     })
       .then(() => {
@@ -55,9 +63,21 @@ export default class ContactForm extends React.Component {
 
   };
 
-  handleChange(event) {
+  handleChangeMessage(event) {
     this.state.loaded = false;
-    this.setState({ email: event.target.value });
+    this.setState({ contactMessage: event.target.value });
+  }
+
+
+  handleChangeName(event) {
+    this.state.loaded = false;
+    this.setState({ contactName: event.target.value });
+  }
+
+
+  handleChangeEmail(event) {
+    this.state.loaded = false;
+    this.setState({ contactEmail: event.target.value });
   }
 
   render() {
@@ -71,14 +91,14 @@ export default class ContactForm extends React.Component {
         <div className="pure-g">
           <div className="pure-u-1 pure-u-md-1-2">
             <label htmlFor="name">Your Name</label>
-            <input required="required" id="name" type="text" name="name" placeholder="Your Name" />
+            <input onChange={this.handleChangeName} required="required" id="name" value={this.state.contactName} type="text" name="name" placeholder="Your Name" />
           </div><div className="pure-u-1 pure-u-md-1-2">
 
             <label htmlFor="email">Your Email</label>
-            <input required="required" id="email" type="email" name="email" placeholder="Your Email" />
+            <input onChange={this.handleChangeEmail} required="required" id="email"  value={this.state.contactEmail} type="email" name="email" placeholder="Your Email" />
           </div><div className="pure-u-1 pure-u-md-2-2 pure-u-lg-4-4">
             <label htmlFor="message">Your message</label>
-            <textarea id="message" className="pure-input-1" name="message" type="text" placeholder="Your message" />
+            <textarea  onChange={this.handleChangeMessage} value={this.state.contactMessage} id="message" className="pure-input-1" name="message" type="text" placeholder="Your message" />
           </div><div className="pure-u-1">
 
             <button disabled={this.state.loaded || this.state.loading} type="submit" title={this.state.buttonText} className="pure-button pure-input-1">{this.state.buttonText}</button>
