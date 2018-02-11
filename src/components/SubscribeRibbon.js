@@ -65,14 +65,15 @@ export default class SubscribeRibbon extends React.Component {
         <h2 className="content-head content-head-ribbon is-center">{this.state.title}</h2>
         <form onSubmit={this.handleSubmit} className="pure-form align-center">
           <div className="pure-g">
-            {!this.state.loaded ? 
+            {!this.state.loaded ? <div>
             <div className="pure-u-1 pure-u-lg-3-5">
               <input required="required" className="pure-input-1" type="email" id="email" value={this.state.email} onChange={this.handleChange} name="email" placeholder="E-mail for newsletter" />
-            </div> : null}
+            </div> 
 
             <div className="pure-u-1 pure-u-lg-2-5">
               <button disabled={this.state.loaded || this.state.loading} type="submit" title={this.state.buttonText} className="pure-button pure-input-1">{this.state.buttonText}</button>
-            </div>
+            </div></div>
+            : null}
 
           </div>
         </form>

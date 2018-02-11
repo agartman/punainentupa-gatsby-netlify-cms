@@ -178,6 +178,8 @@ a.pure-button-primary {
 .splash-container {
     background: silver;
     background-image: url("../../img/IMG_3605-4.jpg");
+    background-position: center;
+
     -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -305,7 +307,7 @@ a.pure-button-primary {
 
 .contact-form .pure-button {
     float: right;
-    max-width: 200px
+    max-width: 30%
 }
 
 .float-center {
@@ -376,6 +378,13 @@ a.pure-button-primary {
  * of the mobile and tablet styles.
  */
 @media (min-width: 78em) {
+    .splash-container{ 
+        background-position: center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
     /* We increase the header font size even more */
     .splash-head {
         font-size: 300%;
