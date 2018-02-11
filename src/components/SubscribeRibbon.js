@@ -1,6 +1,6 @@
 import React from 'react';
 export default class SubscribeRibbon extends React.Component {
-  encode = (data) => {
+  encode = data => {
     return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
       .join("&");
@@ -15,17 +15,17 @@ export default class SubscribeRibbon extends React.Component {
       buttonText: 'Subscribe'
     }
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit = e => {
     this.state.loading = true;
     this.state.buttonText = "Subscribing...";
-    
+    e.preventDefault();
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
+      body: this.encode({
         "form-name": "newsletter",
         "email": this.state.email
       })
@@ -43,7 +43,6 @@ export default class SubscribeRibbon extends React.Component {
       }
     );
 
-    e.preventDefault();
   };
 
   handleChange(event) {
