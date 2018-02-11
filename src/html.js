@@ -34,7 +34,7 @@ module.exports = class HTML extends React.Component {
           <meta property="og:title"
             content="Punainen Tupa Solutions Oy - Full stack web developer Atte Gartman" />
           <meta property="og:description" content="Atte is a full stack developer in southern Finland area. Available for freelance work. Get in touch!" />
-          <meta property="og:image" content="https://punainentupa.fi/img/ogimage.png" />
+          <meta property="og:image" content="http://punainentupa.fi/img/ogimage.png" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="997" />
         
