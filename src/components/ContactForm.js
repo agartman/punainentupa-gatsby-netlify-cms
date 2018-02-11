@@ -85,7 +85,8 @@ export default class ContactForm extends React.Component {
 
           </div>
           {this.state.loaded ?
-            <h2 className="content-head is-center">Thanks. I'll get back to you ASAP.</h2>
+            <div className="pure-u-1 is-center">
+              <h2 className="content-head is-center">Thanks. I'll get back to you ASAP.</h2></div>
             : null}
         </div>
       </form>
