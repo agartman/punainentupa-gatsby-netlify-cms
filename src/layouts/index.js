@@ -14,8 +14,9 @@ const TemplateWrapper = ({ children }) => (
     <Helmet title="Punainen tupa | web development and design">
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="en_GB" />
-      <meta property="og:description"
+      <meta property="og:title"
         content="Punainen tupa solutions Oy - Full stack web developer Atte Gartman" />
+      <meta property="og:description" content="Atte is a full stack developer in southern Finland area. Available for freelance work. Get in touch!" />
       <meta property="og:image" content="https://punainentupa.fi/img/ogimage.png" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="997" />
