@@ -16,8 +16,12 @@ export default class SubscribeRibbon extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     axios.post("/thanks",
-      { name: "newsletter", email: this.state.email }
+      { 
+        "form-name": "newsletter", 
+      email: this.state.email 
+    }
     ).then((data)=>{
+      console.log(data)
       this.state.loaded = true
       this.state.buttonText = "Thanks! I got ya!"
     }).catch(err=>{
