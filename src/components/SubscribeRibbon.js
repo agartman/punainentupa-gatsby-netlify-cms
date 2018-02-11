@@ -16,21 +16,22 @@ export default class SubscribeRibbon extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     axios.post("/thanks",
-      { 
-        "form-name": "newsletter", 
-      email: this.state.email 
-    }
-    ).then((data)=>{
+      {
+        "form-name": "newsletter",
+        email: this.state.email,
+        "bot-field": null
+      }
+    ).then((data) => {
       console.log(data)
       this.state.loaded = true
       this.state.buttonText = "Thanks! I got ya!"
-    }).catch(err=>{
+    }).catch(err => {
       console.log(err)
     })
   }
 
   handleChange(event) {
-    this.setState({email: event.target.value});
+    this.setState({ email: event.target.value });
   }
 
 
@@ -47,7 +48,7 @@ export default class SubscribeRibbon extends React.Component {
           <div className="pure-g">
 
             <div className="pure-u-1 pure-u-lg-3-5">
-              <input className="pure-input-1" type="text" id="email" value={this.state.email}  onChange={this.handleChange} name="email" placeholder="E-mail for newsletter" />
+              <input className="pure-input-1" type="text" id="email" value={this.state.email} onChange={this.handleChange} name="email" placeholder="E-mail for newsletter" />
             </div>
             <div className="pure-u-1 pure-u-lg-2-5">
               <button disabled={this.state.loaded} type="submit" title={this.state.buttonText} className="pure-button pure-input-1">{vars.buttonText}</button>

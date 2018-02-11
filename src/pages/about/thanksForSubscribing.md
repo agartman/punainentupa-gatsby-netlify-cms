@@ -1,6 +1,6 @@
 ---
 templateKey: 'about-page'
-path: /thanks
+path: /thanks-for-subscribing
 title: Thanks
 ---
 ### Thanks for subscribing
