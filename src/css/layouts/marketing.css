@@ -166,6 +166,10 @@ a.pure-button-primary {
     max-width: 700px;
 }
 
+.hidden {
+    display:none;
+}
+
 /*
  * -- SPLASH STYLES --
  * This is the blue top section that appears on the page.
@@ -173,7 +177,7 @@ a.pure-button-primary {
 
 .splash-container {
     background: silver;
-    background-image: url("../../img/IMG_3605.jpg");
+    background-image: url("../../img/IMG_3605-4.jpg");
     -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

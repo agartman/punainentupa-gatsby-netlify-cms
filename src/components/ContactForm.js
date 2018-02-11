@@ -8,6 +8,9 @@ export default ({ content, className }) => <div className="content contact-form"
 
   <form name="contact" action="/thanks-for-contact" className="pure-form pure-form-stacked float-center" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
     <div className="pure-g">
+      <p className="hidden">
+        <label>Don’t fill this out: <input name="bot-field" /></label>
+      </p>
       <div className="pure-u-1 pure-u-md-1-2">
         <input type="hidden" name="form-name" value="contact" />
         <label htmlFor="name">Your Name</label>
