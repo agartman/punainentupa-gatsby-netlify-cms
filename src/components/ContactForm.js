@@ -23,7 +23,7 @@ export default class ContactForm extends React.Component {
   handleSubmit = e => {
     this.setState({
       loading: true,
-      buttonText: "Subscribing..."
+      buttonText: "Sending..."
     })
     e.preventDefault();
 
@@ -85,7 +85,7 @@ export default class ContactForm extends React.Component {
 
           </div>
           {this.state.loaded ?
-            <h2 className="content-head is-center">Thanks. I'll get back to you soon.</h2>
+            <h2 className="content-head is-center">Thanks. I'll get back to you ASAP.</h2>
             : null}
         </div>
       </form>
