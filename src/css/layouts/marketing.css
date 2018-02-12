@@ -223,9 +223,10 @@ a.pure-button-primary {
 .splash-subhead {
     color: white;
     letter-spacing: 0.05em;
-    opacity: 0.8;
     text-transform: uppercase;
     font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+    line-height: 2;
 
 
 }
@@ -423,5 +424,9 @@ a.pure-button-primary {
 
     .pure-button {
         padding: 0.9em 2em
+    }
+
+    .splash-head {
+        margin-top: -70px;
     }
 }
